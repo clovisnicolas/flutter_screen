@@ -1,3 +1,5 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.1] - January 23rd, 2018.
 
-* TODO: Describe initial release.
+* Brightness can be set and retrieved
+* Device can be kept "on"
+
