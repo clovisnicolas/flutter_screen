@@ -1,4 +1,5 @@
 # Screen
+[![pub package](https://img.shields.io/pub/v/screen.svg)](https://pub.dartlang.org/packages/screen)
 A Flutter plugin to manage the device's screen on Android and iOS.
 
 ## Usage
