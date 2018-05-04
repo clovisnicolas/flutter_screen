@@ -1,3 +1,6 @@
+## [0.0.3] - May 4th, 2018
+* Port to Dart 2.0
+
 ## [0.0.2] - January 23rd, 2018.
 
 * Update description
