@@ -1,3 +1,6 @@
+## [0.0.4] - August 21, 2018
+* Adjust pubspec.yml to match Dart 2.0 SDK version
+
 ## [0.0.3] - May 4th, 2018
 * Port to Dart 2.0
 
