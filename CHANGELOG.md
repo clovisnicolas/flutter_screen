@@ -1,3 +1,6 @@
+## [0.0.5] - August 21, 2018
+* Update Android SDK reference
+
 ## [0.0.4] - August 21, 2018
 * Adjust pubspec.yml to match Dart 2.0 SDK version
 
