@@ -37,12 +37,18 @@ public class ScreenPlugin implements MethodCallHandler {
         _registrar.activity().getWindow().setAttributes(layoutParams);
         result.success(null);
         break;
+      case "resetBrightness":
+        WindowManager.LayoutParams params = _registrar.activity().getWindow().getAttributes();
+        params.screenBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE;
+        _registrar.activity().getWindow().setAttributes(params);
+        result.success(null);
+        break;
       case "isKeptOn":
         int flags = _registrar.activity().getWindow().getAttributes().flags;
         result.success((flags & WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON) != 0) ;
         break;
       case "keepOn":
-        Boolean on = call.argument("on");
+        Boolean on = call.argument("on"); 
         if (on) {
           System.out.println("Keeping screen on ");
           _registrar.activity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
