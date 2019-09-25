@@ -48,7 +48,7 @@ public class ScreenPlugin implements MethodCallHandler {
         result.success((flags & WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON) != 0) ;
         break;
       case "keepOn":
-        Boolean on = call.argument("on"); 
+        Boolean on = call.argument("on");
         if (on) {
           System.out.println("Keeping screen on ");
           _registrar.activity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
