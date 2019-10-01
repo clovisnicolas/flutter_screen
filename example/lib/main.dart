@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:screen/flutter_screen.dart';
+import 'package:screen/screen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -19,8 +19,8 @@ class _MyAppState extends State<MyApp> {
   }
 
   initPlatformState() async {
-    bool keptOn = await FlutterScreen.isKeptOn;
-    double brightness = await FlutterScreen.brightness;
+    bool keptOn = await Screen.isKeptOn;
+    double brightness = await Screen.brightness;
     setState((){
       _isKeptOn = keptOn;
       _brightness = brightness;
@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
                     children: <Widget>[
                       new Text("Screen is kept on ? "),
                       new Checkbox(value: _isKeptOn, onChanged: (bool b){
-                        FlutterScreen.keepOn(b);
+                        Screen.keepOn(b);
                         setState((){_isKeptOn = b; });
                       })
                     ]
@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
                   new Text("Brightness :"),
                   new Slider(value : _brightness, onChanged : (double b){
                     setState((){_brightness = b;});
-                    FlutterScreen.setBrightness(b);
+                    Screen.setBrightness(b);
                   })
                 ]
             )

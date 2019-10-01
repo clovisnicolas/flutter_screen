@@ -3,7 +3,7 @@
 @implementation ScreenPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   FlutterMethodChannel* channel = [FlutterMethodChannel
-      methodChannelWithName:@"github.com/singlakaran/flutter_screen"
+      methodChannelWithName:@"github.com/clovisnicolas/flutter_screen"
             binaryMessenger:[registrar messenger]];
   ScreenPlugin* instance = [[ScreenPlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];
