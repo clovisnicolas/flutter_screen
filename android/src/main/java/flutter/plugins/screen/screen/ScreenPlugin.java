@@ -20,7 +20,7 @@ public class ScreenPlugin implements MethodCallHandler {
   private Registrar _registrar;
 
   public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "github.com/clovisnicolas/flutter_screen");
+    final MethodChannel channel = new MethodChannel(registrar.messenger(), "github.com/singlakaran/flutter_screen");
     channel.setMethodCallHandler(new ScreenPlugin(registrar));
   }
 

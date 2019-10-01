@@ -3,7 +3,7 @@
 A Flutter plugin to manage the device's screen on Android and iOS.
 
 ## Usage
-To use this plugin, add `screen` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
+To use this plugin, add `flutter_screen` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
 Make sure you add the following permissions to your Android Manifest
 ```
@@ -13,17 +13,20 @@ Make sure you add the following permissions to your Android Manifest
 ## Example
 ``` dart
 // Import package
-import 'package:screen/screen.dart';
+import 'package:flutter_screen/flutter_screen.dart';
 
 // Get the current brightness:
 double brightness = await Screen.brightness;
 
 // Set the brightness:
-Screen.setBrightness(0.5);
+FlutterScreen.setBrightness(0.5);
 
 // Check if the screen is kept on:
-bool isKeptOn = await Screen.isKeptOn;
+bool isKeptOn = await FlutterScreen.isKeptOn;
 
 // Prevent screen from going into sleep mode:
-Screen.keepOn(true);
+FlutterScreen.keepOn(true);
+
+//free brightness (it works only on Android):
+FlutterScreen.resetBrightness();
 ```
