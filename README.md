@@ -21,6 +21,9 @@ double brightness = await Screen.brightness;
 // Set the brightness:
 Screen.setBrightness(0.5);
 
+// Reset the brightness to system value (controlled by user):
+Screen.setBrightness(-1);
+
 // Check if the screen is kept on:
 bool isKeptOn = await Screen.isKeptOn;
 
