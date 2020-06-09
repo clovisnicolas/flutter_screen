@@ -14,18 +14,15 @@ import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.MethodCall;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /**
  * ScreenPlugin
  */
 public class ScreenPlugin implements MethodCallHandler, FlutterPlugin, ActivityAware {
 
-    private ScreenPlugin(Registrar registrar) {
-        this._activity = registrar.activity();
-    }
-
     private Activity _activity;
+
+    public ScreenPlugin() { }
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
@@ -57,7 +54,7 @@ public class ScreenPlugin implements MethodCallHandler, FlutterPlugin, ActivityA
     }
 
     @Override
-    public void onMethodCall(MethodCall call, @NonNull Result result) {
+    public void onMethodCall(MethodCall call, Result result) {
         switch (call.method) {
             case "brightness":
                 result.success(getBrightness());
