@@ -27,11 +27,6 @@ public class ScreenPlugin implements MethodCallHandler, FlutterPlugin, ActivityA
 
     private Activity _activity;
 
-    private Registrar _registrar;
-
-    public ScreenPlugin() {
-    }
-
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
         final MethodChannel channel = new MethodChannel(binding.getBinaryMessenger(), "github.com/clovisnicolas/flutter_screen");
@@ -62,7 +57,7 @@ public class ScreenPlugin implements MethodCallHandler, FlutterPlugin, ActivityA
     }
 
     @Override
-    public void onMethodCall(MethodCall call, Result result) {
+    public void onMethodCall(MethodCall call, @NonNull Result result) {
         switch (call.method) {
             case "brightness":
                 result.success(getBrightness());
@@ -90,9 +85,9 @@ public class ScreenPlugin implements MethodCallHandler, FlutterPlugin, ActivityA
                 result.success(null);
                 break;
             case "resetBrightness":
-                WindowManager.LayoutParams params = _registrar.activity().getWindow().getAttributes();
+                WindowManager.LayoutParams params = _activity.getWindow().getAttributes();
                 params.screenBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE;
-                _registrar.activity().getWindow().setAttributes(params);
+                _activity.getWindow().setAttributes(params);
                 result.success(null);
                 break;
             default:
