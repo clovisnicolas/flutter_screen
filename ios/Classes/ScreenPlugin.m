@@ -26,6 +26,10 @@
     NSNumber *b = call.arguments[@"on"];
     [[UIApplication sharedApplication] setIdleTimerDisabled:b.boolValue];
   }
+  else if ([@"resetBrightness" isEqualToString:call.method]) {
+    [[UIScreen mainScreen] setBrightness:nil];
+    result(nil);
+  }
   else {
     result(FlutterMethodNotImplemented);
   }
