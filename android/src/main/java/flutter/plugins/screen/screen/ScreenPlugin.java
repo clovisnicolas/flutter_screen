@@ -81,16 +81,9 @@ public class ScreenPlugin implements MethodCallHandler, FlutterPlugin, ActivityA
                 }
                 result.success(null);
                 break;
-            case "resetBrightness":
-                WindowManager.LayoutParams params = _activity.getWindow().getAttributes();
-                params.screenBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE;
-                _activity.getWindow().setAttributes(params);
-                result.success(null);
-                break;
             default:
                 result.notImplemented();
                 break;
-
         }
     }
 
