@@ -10,6 +10,10 @@ Make sure you add the following permissions to your Android Manifest
 <uses-permission android:name="android.permission.WAKE_LOCK" />
 ```
 
+## Caveats
+
+Changing brightness sets the screen brightness for the current app only (on modern Android versions) and it also locks the brightness slider. See https://developer.android.com/reference/android/view/WindowManager.LayoutParams#screenBrightness for API details.
+
 ## Example
 ``` dart
 // Import package
