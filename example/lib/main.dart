@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:screen/screen.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
-  _MyAppState createState() => new _MyAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -13,15 +13,15 @@ class _MyAppState extends State<MyApp> {
   double _brightness = 1.0;
 
   @override
-  initState() {
+  void initState() {
     super.initState();
     initPlatformState();
   }
 
-  initPlatformState() async {
+  Future<void> initPlatformState() async {
     bool keptOn = await Screen.isKeptOn;
     double brightness = await Screen.brightness;
-    setState((){
+    setState(() {
       _isKeptOn = keptOn;
       _brightness = brightness;
     });
@@ -29,29 +29,36 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-        appBar: new AppBar(title: new Text('Screen plugin example')),
-        body: new Center(
-            child: new Column(
-                children: <Widget>[
-                  new Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      new Text("Screen is kept on ? "),
-                      new Checkbox(value: _isKeptOn, onChanged: (bool b){
-                        Screen.keepOn(b);
-                        setState((){_isKeptOn = b; });
-                      })
-                    ]
-                  ),
-                  new Text("Brightness :"),
-                  new Slider(value : _brightness, onChanged : (double b){
-                    setState((){_brightness = b;});
-                    Screen.setBrightness(b);
-                  })
-                ]
-            )
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text('Screen plugin example')),
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+                Text('Screen is kept on ? '),
+                Checkbox(
+                  value: _isKeptOn,
+                  onChanged: (bool b) {
+                    Screen.keepOn(b);
+                    setState(() {
+                      _isKeptOn = b;
+                    });
+                  },
+                )
+              ]),
+              Text('Brightness :'),
+              Slider(
+                value: _brightness,
+                onChanged: (double b) {
+                  setState(() {
+                    _brightness = b;
+                  });
+                  Screen.setBrightness(b);
+                },
+              )
+            ],
+          ),
         ),
       ),
     );
