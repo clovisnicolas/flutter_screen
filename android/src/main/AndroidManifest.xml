@@ -1,3 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="flutter.plugins.screen.screen">
+    package="flutter.plugins.screen.screen">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 </manifest>
