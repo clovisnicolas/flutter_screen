@@ -3,7 +3,10 @@
 .idea
 .packages
 .pub/
+.dart_tool/
 build/
 ios/.generated/
 packages
 pubspec.lock
+example/.flutter-plugins-dependencies
+example/ios/Flutter/flutter_export_environment.sh
