@@ -9,7 +9,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _isKeptOn = false;
+  bool? _isKeptOn = false;
   double _brightness = 1.0;
 
   @override
@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       new Text("Screen is kept on ? "),
-                      new Checkbox(value: _isKeptOn, onChanged: (bool b){
+                      new Checkbox(value: _isKeptOn, onChanged: (bool? b){
                         Screen.keepOn(b);
                         setState((){_isKeptOn = b; });
                       })
