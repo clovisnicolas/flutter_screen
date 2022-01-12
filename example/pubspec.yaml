@@ -1,6 +1,9 @@
 name: screen_example
 description: Demonstrates how to use the screen plugin.
 
+environment:
+  sdk: ">=2.10.0 <3.0.0"
+  flutter: ">=2.0.0"
 dependencies:
   flutter:
     sdk: flutter
